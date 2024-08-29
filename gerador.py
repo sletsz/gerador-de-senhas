@@ -15,9 +15,9 @@ def gerador_de_senhas(tamanho_da_senha):
     password = ''.join(random.choice(characters) for i in range(tamanho_da_senha))
     return password
         
-def salvar_senha(password, filename="senhas.txt"):
+def salvar_senha(password, descricao, filename="senhas.txt"):
     with open(filename, "a") as file:  # "a" para append, não sobrescreve o arquivo
-        file.write(password + "\n")
+        file.write(descricao + ": " + password + "\n")
 
 def senhas_anteriores(filename="senhas.txt"):
     try:
